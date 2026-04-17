@@ -1,0 +1,10 @@
+
+:root {
+    --teal-glow: #00f5d4;
+    --dark-blue: #0a2540;
+}
+body { font-family: 'Inter', sans-serif; background:#05101f; color:white; }
+.glow-teal { text-shadow: 0 0 10px var(--teal-glow),0 0 20px var(--teal-glow); }
+.nav-link:hover { color:#00f5d4; }
+.card { transition:0.3s; }
+.card:hover { transform:translateY(-5px); box-shadow:0 0 20px #00f5d4; }
