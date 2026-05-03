@@ -286,18 +286,16 @@
                 </div>
             </div>
             
-           <!-- The outer container now has p-12 to ensure the blur/glow has space to exist -->
-            <div class="relative p-12 inline-block">
-                
-                <!-- The Glow Layer: We use -inset-4 to keep it closer to the image, preventing clipping -->
-                <div class="absolute inset-4 bg-gradient-to-br from-[#00f5d4] to-[#0a2540] opacity-40 blur-3xl rounded-[4rem] -rotate-6 animate-[spin_25s_linear_infinite]"></div>
-                
-                <!-- The Image: Added z-10 to ensure it stays on top of the glow -->
-                <img src="my_pic.png" 
-                     alt="Christian Aglanu - Cybersecurity Engineer."
-                     class="relative z-10 w-80 md:w-96 h-80 md:h-96 object-cover rounded-3xl">
-                     
+          <div class="relative">
+            <!-- The Glow Layer -->
+            <div class="absolute -inset-8 bg-gradient-to-br from-[#00f5d4] to-[#0a2540] opacity-30 blur-3xl rounded-[4rem] -rotate-6 animate-[spin_25s_linear_infinite]"></div>
+            
+            <!-- The Image -->
+            <img src="my_pic.png" 
+                 alt="Christian Aglanu - Cybersecurity Engineer."
+                 class="relative w-80 md:w-96 h-80 md:h-96 object-cover rounded-3xl">
             </div>
+            
         </div>
         
     </section>
