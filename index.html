@@ -3,69 +3,71 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Christian Aglanu - Professional Cybersecurity Engineer Portfolio">
 <title>Christian Aglanu | Cybersecurity Engineer</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="assets/css/styles.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Christian Aglanu - Professional Cybersecurity Engineer Portfolio">
-    <title>Christian Aglanu |CYBER SECUSECURITY ENGINEER | PHYLOSOPHER  </title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
-        
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap');
+
         :root {
             --teal-glow: #00f5d4;
             --dark-blue: #0a2540;
+            --panel: rgba(10, 37, 64, 0.95);
+            --muted: #9cb3c8;
         }
-        
+
         * {
+            box-sizing: border-box;
             transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
             transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
             transition-duration: 150ms;
         }
-        
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Inter', system_ui, sans-serif;
+            background: linear-gradient(135deg, #05101f 0%, #071723 60%, #0a2540 100%);
+            color: #f5f7fa;
         }
-        
+
+        ::selection {
+            background: rgba(0, 245, 212, 0.35);
+            color: white;
+        }
+
         .heading-font {
             font-family: 'Space Grotesk', sans-serif;
+            letter-spacing: -0.02em;
         }
-        
+
         .glow-teal {
-            text-shadow: 
-                0 0 10px var(--teal-glow),
-                0 0 20px var(--teal-glow),
-                0 0 40px var(--teal-glow);
+            text-shadow: 0 0 16px rgba(0, 245, 212, 0.24), 0 0 38px rgba(0, 245, 212, 0.16);
         }
-        
+
         .nav-link {
             position: relative;
         }
-        
+
         .nav-link:after {
             content: '';
             position: absolute;
             width: 0;
             height: 2px;
-            bottom: -2px;
+            bottom: -4px;
             left: 0;
-            background-color: #00f5d4;
-            box-shadow: 0 0 15px #00f5d4;
+            background: linear-gradient(90deg, #00f5d4, transparent);
+            transition: width 0.25s ease;
         }
-        
-        .nav-link:hover:after {
+
+        .nav-link:hover:after,
+        .nav-link:focus-visible:after {
             width: 100%;
         }
-        
-        .section-header {
-            position: relative;
-        }
-        
+
         .section-header:after {
             content: '';
             position: absolute;
@@ -77,35 +79,34 @@
             border-radius: 9999px;
             box-shadow: 0 0 20px #00f5d4;
         }
-        
+
         .hero-bg {
-            background: radial-gradient(circle at 50% 30%, rgba(0, 245, 212, 0.15) 0%, transparent 70%),
-                        linear-gradient(180deg, #0a2540 0%, #05101f 100%);
+            min-height: 100vh;
+            background: radial-gradient(circle at top left, rgba(0, 245, 212, 0.12) 0%, transparent 34%),
+                        linear-gradient(135deg, #0a2540 0%, #071623 55%, #05101f 100%);
         }
-        
+
         .card-glow {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
+
         .card-glow:hover {
-            transform: translateY(-8px) scale(1.03);
-            box-shadow: 
-                0 25px 50px -12px rgb(0 245 212 / 0.3),
-                0 0 0 1px rgb(0 245 212 / 0.3),
-                0 0 40px -5px rgb(0 245 212);
+            transform: translateY(-6px);
+            border-color: rgba(0, 245, 212, 0.4);
+            box-shadow: 0 20px 45px rgba(0, 245, 212, 0.16);
         }
-        
+
         .timeline-line {
-            background: linear-gradient(to bottom, #0a2540, #0a2540);
-            box-shadow: 0 0 15px #00f5d4;
-            border-radius: 20px
+            background: linear-gradient(to bottom, rgba(0, 245, 212, 0.16), rgba(0, 245, 212, 0.03));
+            box-shadow: inset 0 0 0 1px rgba(0, 245, 212, 0.1);
+            border-radius: 20px;
         }
-        
+
         .neon-button {
             position: relative;
             overflow: hidden;
         }
-        
+
         .neon-button::before {
             content: '';
             position: absolute;
@@ -113,48 +114,38 @@
             left: -50%;
             width: 40%;
             height: 300%;
-            background: linear-gradient(
-                90deg,
-                transparent,
-                rgba(255,255,255,0.4),
-                transparent
-            );
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
             transform: skewX(-25deg);
             animation: shimmer 4s linear infinite;
         }
-        
+
         @keyframes shimmer {
             100% {
                 transform: translateX(300%);
             }
         }
-        
+
         .profile-img {
             transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 
-                0 0 0 8px rgba(10, 37, 64, 0.6),
-                0 0 40px 15px rgba(0, 245, 212, 0.5);
+            box-shadow: 0 0 0 8px rgba(10, 37, 64, 0.6), 0 0 40px 15px rgba(0, 245, 212, 0.22);
         }
-        
+
         .profile-img:hover {
-            box-shadow: 
-                0 0 0 12px rgba(10, 37, 64, 0.8),
-                0 0 60px 25px rgba(0, 245, 212, 0.8);
-            transform: scale(1.08) rotate(3deg);
+            box-shadow: 0 0 0 12px rgba(10, 37, 64, 0.8), 0 0 60px 25px rgba(0, 245, 212, 0.28);
+            transform: scale(1.03) rotate(2deg);
         }
-        
-        /* New JS Animation Styles */
+
         .animate-on-scroll {
             opacity: 0;
             transform: translateY(40px);
             transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
+
         .animate-on-scroll.visible {
             opacity: 1;
             transform: translateY(0);
         }
-        
+
         .skill-bar {
             height: 6px;
             background: #05101f;
@@ -162,7 +153,7 @@
             overflow: hidden;
             position: relative;
         }
-        
+
         .skill-progress {
             height: 100%;
             background: linear-gradient(90deg, #00f5d4, #00d4b8);
@@ -170,23 +161,140 @@
             width: 0%;
             transition: width 1.8s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
-        
+
         .typing-cursor {
             animation: blink 0.8s step-end infinite;
         }
-        
+
         @keyframes blink {
             50% { opacity: 0; }
         }
-        
+
         .stat-number {
             font-variant-numeric: tabular-nums;
         }
+
+        .eyebrow {
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+            color: #6fe8dc;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .soft-panel {
+            background: linear-gradient(145deg, rgba(10, 37, 64, 0.95), rgba(5, 16, 31, 0.95));
+            border: 1px solid rgba(0, 245, 212, 0.16);
+            box-shadow: 0 25px 60px rgba(2, 6, 15, 0.35);
+        }
+
+        .journal-shell {
+            background: linear-gradient(145deg, rgba(10, 37, 64, 0.96), rgba(5, 16, 31, 0.96));
+            border: 1px solid rgba(0, 245, 212, 0.16);
+            box-shadow: 0 28px 70px rgba(2, 6, 15, 0.35);
+        }
+
+        .journal-card {
+            background: rgba(255, 255, 255, 0.035);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+        }
+
+        .journal-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            border-radius: 9999px;
+            padding: 0.35rem 0.7rem;
+            color: #8fe8de;
+            background: rgba(0, 245, 212, 0.12);
+            border: 1px solid rgba(0, 245, 212, 0.2);
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .hero-pill {
+            border: 1px solid rgba(255,255,255,0.12);
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(8px);
+            border-radius: 9999px;
+            padding: 0.7rem 1rem;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .hero-media-frame {
+            position: relative;
+            width: min(100%, 560px);
+            max-width: 100%;
+            aspect-ratio: 4 / 5;
+            overflow: visible;
+            max-height: 78vh;
+            padding: 1rem;
+            isolation: isolate;
+        }
+
+        .hero-media-frame::before {
+            content: '';
+            position: absolute;
+            inset: 0.3rem 0.6rem 0.6rem 0.3rem;
+            border-radius: 50% 50% 46% 54% / 58% 58% 42% 42%;
+            background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.12), rgba(0,245,212,0.08) 28%, rgba(10,37,64,0.92) 70%, rgba(5,16,31,0.98) 100%);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.1), 0 24px 70px rgba(0, 245, 212, 0.12);
+            transform: translateY(12px);
+            z-index: 0;
+        }
+
+        .hero-media-frame::after {
+            content: '';
+            position: absolute;
+            inset: 0.2rem;
+            border-radius: 50% 50% 46% 54% / 58% 58% 42% 42%;
+            border: 1px solid rgba(255,255,255,0.16);
+            box-shadow: 0 10px 35px rgba(2, 6, 15, 0.24);
+            z-index: 0;
+        }
+
+        .hero-media-frame .hero-abstract {
+            position: absolute;
+            inset: auto auto 10% 8%;
+            width: 34%;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0,245,212,0.28), transparent 70%);
+            filter: blur(16px);
+            z-index: 0;
+        }
+
+        .hero-media-frame img {
+            position: relative;
+            z-index: 2;
+            width: 70%;
+            height: 70%;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+            border-radius: 50% 50% 46% 54% / 58% 58% 42% 42%;
+            transform: translate(-10px, -12px) scale(1.02);
+            box-shadow: 0 24px 60px rgba(2, 6, 15, 0.45);
+            animation: heroFloat 5s ease-in-out infinite;
+        }
+
+        @keyframes heroFloat {
+            0%, 100% { transform: translate(-10px, -12px) scale(1.02); }
+            50% { transform: translate(-8px, -16px) scale(1.03); }
+        }
+
+        .subtle-divider {
+            width: 72px;
+            height: 3px;
+            border-radius: 9999px;
+            background: linear-gradient(90deg, #00f5d4, transparent);
+        }
     </style>
 </head>
-<body class="bg-[#05101f] text-white">
-
-<script src="assets/js/main.js"></script>
 <body class="bg-[#05101f] text-white overflow-x-hidden">
     <!-- NAVBAR -->
     <nav class="bg-[#0a2540]/90 backdrop-blur-lg border-b border-[#00f5d4]/20 sticky top-0 z-50">
@@ -236,7 +344,7 @@
                 <a href="#certifications" onclick="toggleMobileMenu()" class="py-2 px-4 hover:bg-[#00f5d4]/10 rounded-2xl flex items-center gap-x-3">
                     <i class="fa-solid fa-certificate w-5"></i> CERTIFICATIONS
                 </a>
-                <a href="#contact" onclick="toggleMobileMenu()" class="py-2 px-4 hover:bg-[#00f5d4]/10 rounded-2xl flex items-center gap-x-3">
+                <a href="#contact-section" onclick="toggleMobileMenu()" class="py-2 px-4 hover:bg-[#00f5d4]/10 rounded-2xl flex items-center gap-x-3">
                     <i class="fa-solid fa-envelope w-5"></i> CONTACT
                 </a>
             </div>
@@ -244,33 +352,30 @@
     </nav>
 
     <!-- HERO SECTION -->
-    <section id="home" class="hero-bg min-h-screen flex items-center pt-16 relative overflow-hidden">
-        <!-- Particle Canvas (JS Animation) -->
-        <canvas id="hero-particles" class="absolute inset-0 z-0 pointer-events-none"></canvas>
-        
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
-            <!-- Left Content -->
-            <div class="flex flex-col justify-center space-y-8">                
-                <h1 class="text-6xl md:text-7xl font-semibold heading-font leading-none tracking-tighter glow-teal">
+    <section id="home" class="hero-bg min-h-screen flex items-center py-6 sm:py-8 lg:py-10 relative overflow-hidden">
+        <canvas id="hero-particles" class="absolute inset-0 z-0 pointer-events-none opacity-70"></canvas>
+
+        <div class="max-w-7xl mx-auto w-full px-6 lg:px-8 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center relative z-10">
+            <div class="flex flex-col justify-center max-w-[560px] mx-auto lg:mx-0 text-center lg:text-left space-y-5 sm:space-y-6">
+                <h1 class="text-[clamp(2.8rem,5.4vw,4.7rem)] sm:text-[clamp(3.4rem,6vw,5.4rem)] font-semibold heading-font leading-[0.9] tracking-[-0.03em] glow-teal">
                     CHRISTIAN<br>AGLANU
                 </h1>
-                
-                <!-- Typing Animation -->
-                <div class="text-3xl md:text-4xl font-light text-[#00f5d4]/90 flex items-center gap-x-2">
+
+                <div class="text-[clamp(1rem,1.7vw,1.35rem)] font-light text-[#9fe7e0] flex items-center justify-center lg:justify-start gap-x-2">
                     <span id="typing-text"></span>
                     <span class="typing-cursor text-[#00f5d4] font-light">_</span>
                 </div>
-                
-                <!-- Trust signals -->
-                <div class="flex items-center gap-x-8 text-sm">
-                    <div class="flex items-center gap-x-2">
-                        <i class="fa-solid fa-check-circle text-[#00f5d4]"></i>
-                        <span>Based in Accra, Ghana</span>
-                    </div>
+
+                <div class="flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-4 pt-1">
+                    <a href="#projects" class="neon-button inline-flex items-center justify-center rounded-full bg-[#00f5d4] px-5 py-2.5 text-sm font-semibold text-[#05101f] hover:bg-[#4ff1df]">
+                        View Projects
+                    </a>
+                    <a href="#contact-section" class="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-5 py-2.5 text-sm font-semibold text-white/90 hover:border-[#00f5d4]/40 hover:text-[#00f5d4]">
+                        Contact Me
+                    </a>
                 </div>
-                
-                <!-- Contact info strip -->
-                <div class="flex flex-wrap gap-x-8 text-sm border-t border-[#00f5d4]/20 pt-6">
+
+                <div class="flex flex-wrap justify-center lg:justify-start gap-x-6 gap-y-3 text-sm border-t border-[#00f5d4]/20 pt-4 text-white/70">
                     <a href="mailto:christian.aglanu.ca@gmail.com" class="flex items-center gap-x-2 hover:text-[#00f5d4]">
                         <i class="fa-solid fa-envelope"></i>
                         christian.aglanu.ca@gmail.com
@@ -279,92 +384,77 @@
                         <i class="fa-solid fa-phone"></i>
                         +233 500 163 070
                     </a>
-                    <div class="flex items-center gap-x-2 text-white/60">
-                        <i class="fa-solid fa-location-dot"></i>
-                        Accra, Ghana
-                    </div>
                 </div>
             </div>
-            
-            <div class="relative flex justify-center md:justify-end">
-                <!-- Glow Layer -->
-                <div class="absolute -inset-16 bg-gradient-to-br from-[#00f5d4] to-[#0a2540] opacity-25 blur-[110px] rounded-full animate-[spin_30s_linear_infinite]"></div>
-                
-                <!-- Taller, Fixed-Width Profile Image -->
-                <img src="my_pic.png" 
-                     alt="Christian Aglanu - Cybersecurity Engineer." 
-                     class="relative w-[70vw] md:w-[40vw] lg:w-[35vw] max-w-[550px] min-h-[500px] md:min-h-[700px] object-cover object-top z-10 rounded-3xl shadow-2xl transition-all duration-500">
+
+            <div class="flex justify-center lg:justify-end items-center">
+                <div class="hero-media-frame relative">
+                    <div class="hero-abstract"></div>
+                    <img src="my_pic.png"
+                         alt="Christian Aglanu - Cybersecurity Engineer"
+                         class="relative">
+                </div>
             </div>
-            
         </div>
-        
     </section>
 
     <!-- ABOUT SECTION -->
     <section id="about" class="py-24 bg-[#05101f]">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-12 gap-16 items-center">
-                <div class="md:col-span-5">
-                    <h2 class="text-5xl heading-font font-semibold mt-4 leading-none glow-teal">B A C K G R O U N D</h2>
-                    <div class="h-1 w-24 bg-[#00f5d4] my-8"></div>
-                    <p class="text-lg text-white/80 leading-relaxed">
-                        With over 5 years of hands-on experience in cybersecurity, I specialize in turning complex threats into manageable defenses. 
-                        From red team operations to enterprise-grade security architecture, my mission is to stay three steps ahead of attackers.
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                <div class="lg:col-span-4">
+                    <h2 class="text-4xl sm:text-5xl heading-font font-semibold leading-tight glow-teal">
+                        B A C K G R O U N D
+                    </h2>
+                    <div class="subtle-divider my-8"></div>
+                    <p class="text-lg text-white/75 leading-relaxed">
+                        With over 5 years of hands-on experience in cybersecurity, I turn complex threats into manageable defenses and practical strategy.
                     </p>
-                    <p class="text-lg text-white/80 leading-relaxed mt-6">
-                        Based in Accra, I’ve worked with banks, government agencies, and tech startups across Ghana and the region to fortify their digital infrastructure.
+                    <p class="text-lg text-white/75 leading-relaxed mt-6">
+                        From offensive security and incident response to policy design and team enablement, I help organizations build confidence in their digital environments.
                     </p>
-                    
-                    <!-- Quick facts with JS Counter Animation -->
-                    <div class="mt-12 grid grid-cols-3 gap-6">
-                        <div class="text-center">
-                            <div id="stat-vuln" class="stat-number text-[#00f5d4] text-5xl font-semibold mb-1">0</div>
-                            <div class="text-white/70 text-sm">Vulnerability assessments completed</div>
+
+                    <div class="mt-10 grid grid-cols-3 gap-4">
+                        <div class="rounded-2xl border border-white/10 bg-white/5 p-4 text-center">
+                            <div id="stat-vuln" class="stat-number text-[#00f5d4] text-3xl sm:text-4xl font-semibold mb-1">0</div>
+                            <div class="text-white/65 text-xs">Projects</div>
                         </div>
-                        <div class="text-center">
-                            <div id="stat-incidents" class="stat-number text-[#00f5d4] text-5xl font-semibold mb-1">0</div>
-                            <div class="text-white/70 text-sm">Major incidents mitigated</div>
+                        <div class="rounded-2xl border border-white/10 bg-white/5 p-4 text-center">
+                            <div id="stat-incidents" class="stat-number text-[#00f5d4] text-3xl sm:text-4xl font-semibold mb-1">0</div>
+                            <div class="text-white/65 text-xs">Certifications</div>
                         </div>
-                        <div class="text-center">
-                            <div id="stat-satisfaction" class="stat-number text-[#00f5d4] text-5xl font-semibold mb-1">0</div>
-                            <div class="text-white/70 text-sm">Average client satisfaction</div>
+                        <div class="rounded-2xl border border-white/10 bg-white/5 p-4 text-center">
+                            <div id="stat-satisfaction" class="stat-number text-[#00f5d4] text-3xl sm:text-4xl font-semibold mb-1">0</div>
+                            <div class="text-white/65 text-xs">Capability</div>
                         </div>
                     </div>
                 </div>
-                
-                <div class="md:col-span-7 bg-[#0a2540] rounded-3xl p-8 md:p-12 border border-[#00f5d4]/10 animate-on-scroll">
-                    <h3 class="text-[#00f5d4] font-medium mb-6 flex items-center gap-x-3">
+
+                <div class="lg:col-span-8 soft-panel rounded-[2rem] p-8 sm:p-10 lg:p-12 animate-on-scroll">
+                    <h3 class="text-[#00f5d4] font-medium mb-8 flex items-center gap-x-3">
                         <i class="fa-solid fa-lightbulb"></i>
                         MY APPROACH
                     </h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                        <div class="flex gap-x-5 animate-on-scroll">
-                            <div class="text-4xl text-[#00f5d4]">01</div>
-                            <div>
-                                <h4 class="font-semibold text-xl">Threat Intelligence First</h4>
-                                <p class="text-white/70">I never react — I anticipate. Continuous monitoring of emerging threats specific to African digital ecosystems.</p>
-                            </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="rounded-2xl border border-white/10 bg-[#05101f]/70 p-6">
+                            <div class="text-4xl text-[#00f5d4] mb-3">01</div>
+                            <h4 class="font-semibold text-xl mb-2">Threat Intelligence First</h4>
+                            <p class="text-white/70">I anticipate risk long before it becomes a crisis through continuous monitoring and adaptive defense.</p>
                         </div>
-                        <div class="flex gap-x-5 animate-on-scroll">
-                            <div class="text-4xl text-[#00f5d4]">02</div>
-                            <div>
-                                <h4 class="font-semibold text-xl">Zero Trust by Design</h4>
-                                <p class="text-white/70">Assume breach. Every system is built with least-privilege access and continuous verification.</p>
-                            </div>
+                        <div class="rounded-2xl border border-white/10 bg-[#05101f]/70 p-6">
+                            <div class="text-4xl text-[#00f5d4] mb-3">02</div>
+                            <h4 class="font-semibold text-xl mb-2">Zero Trust by Design</h4>
+                            <p class="text-white/70">Every system is built around least privilege, verification, and controlled access from day one.</p>
                         </div>
-                        <div class="flex gap-x-5 animate-on-scroll">
-                            <div class="text-4xl text-[#00f5d4]">03</div>
-                            <div>
-                                <h4 class="font-semibold text-xl">Human-Centric Security</h4>
-                                <p class="text-white/70">Technology alone fails. I train teams to become the strongest line of defense.</p>
-                            </div>
+                        <div class="rounded-2xl border border-white/10 bg-[#05101f]/70 p-6">
+                            <div class="text-4xl text-[#00f5d4] mb-3">03</div>
+                            <h4 class="font-semibold text-xl mb-2">Human-Centric Security</h4>
+                            <p class="text-white/70">Technology alone is not enough; people and processes are essential to lasting protection.</p>
                         </div>
-                        <div class="flex gap-x-5 animate-on-scroll">
-                            <div class="text-4xl text-[#00f5d4]">04</div>
-                            <div>
-                                <h4 class="font-semibold text-xl">Ethical &amp; Transparent</h4>
-                                <p class="text-white/70">Every engagement follows strict ethical guidelines and delivers actionable, clear reports.</p>
-                            </div>
+                        <div class="rounded-2xl border border-white/10 bg-[#05101f]/70 p-6">
+                            <div class="text-4xl text-[#00f5d4] mb-3">04</div>
+                            <h4 class="font-semibold text-xl mb-2">Ethical &amp; Transparent</h4>
+                            <p class="text-white/70">Every engagement is grounded in clear communication, responsible action, and measurable outcomes.</p>
                         </div>
                     </div>
                 </div>
@@ -469,66 +559,86 @@
 
     <!-- EXPERIENCE SECTION -->
     <section id="experience" class="py-24 bg-[#05101f]">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex justify-between items-baseline mb-12">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between mb-12">
                 <div>
-                    <h2 class="text-5xl heading-font font-semibold mt-4 glow-teal">Professional Journey</h2>
+                    <h2 class="text-4xl sm:text-5xl heading-font font-semibold leading-tight glow-teal">Education, Certifications, and Direction</h2>
                 </div>
-
             </div>
-            
-            <div class="relative pl-8 border-l-2 border-[#00f5d4] timeline-line">
-                <div class="mb-16 relative animate-on-scroll">
-                    <div class="grid md:grid-cols-12 gap-6">
-                        <div class="md:col-span-3">
-                            <div class="text-[#00f5d4] font-mono text-sm">2019...</div>
-                            <h3 class="text-2xl font-semibold">The Foundation of a Cybersecurity Specialist</h3>
-                            <p class="text-white/60">self Space</p>
-                        </div>
-                        <div class="md:col-span-9">
-                            <ul class="space-y-4 text-white/80">
-                                <li class="flex gap-x-3"><i class="fa-solid fa-circle-check text-[#00f5d4] mt-1"></i> Project base approach in all areas.</li>
-                                <li class="flex gap-x-3"><i class="fa-solid fa-circle-check text-[#00f5d4] mt-1"></i> CTFs and Lab Machines</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- Additional timeline items with animate-on-scroll -->
-                <div class="mb-16 relative animate-on-scroll">
-                    <div class="grid md:grid-cols-12 gap-6">
-                        <div class="md:col-span-3">
-                            <div class="text-[#00f5d4] font-mono text-sm">2019...</div>
-                            <h3 id="certifications" class="text-2xl font-semibold">Academic Excellence & Certifications</h3>
-                            <p class="text-white/60">SIIM University</p>
-                        </div>
-                        <div class="md:col-span-9">
-                            <ul class="space-y-4 text-white/80">
-                                <li class="flex gap-x-3"><i class="fa-solid fa-circle-check text-[#00f5d4] mt-1"></i> Degree in Information Security / Cybersecurity | on-going </li>
-                                 <li class="flex gap-x-3"><i class="fa-solid fa-circle-check text-[#00f5d4] mt-1"></i> OneMillion Coders Cyber Se urity Program | Ghana | On-going</li>
-                                <li class="flex gap-x-3"><i class="fa-solid fa-circle-check text-[#00f5d4] mt-1"></i> Alison CISSP (certified information security professional) | complete </li>
-                                <li class="flex gap-x-3"><i class="fa-solid fa-circle-check text-[#00f5d4] mt-1"></i> ALX Cybersecurity | completed</li>
-                                <li class="flex gap-x-3"><i class="fa-solid fa-circle-check text-[#00f5d4] mt-1"></i> Udemy Ethical Hacking - Practical Training | completed </li>
-                                <li class="flex gap-x-3"><i class="fa-solid fa-circle-check text-[#00f5d4] mt-1"></i> Alison Basics of Computer Networking | completed</li>
-                                <li class="flex gap-x-3"><i class="fa-solid fa-circle-check text-[#00f5d4] mt-1"></i> Alison Diploma in Cybersecurity | completed</li>
-                                <li class="flex gap-x-3"><i class="fa-solid fa-circle-check text-[#00f5d4] mt-1"></i> ALX Professional Foundations | completed </li>
-                                <li class="flex gap-x-3"><i class="fa-solid fa-circle-check text-[#00f5d4] mt-1"></i> Alison Winning With Communication | completed</li>
-                            </ul>
+
+            <div class="journal-shell rounded-[2rem] p-6 sm:p-8 lg:p-10 animate-on-scroll">
+                <div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-8">
+                    <div class="journal-card rounded-[1.5rem] p-7 lg:p-8">
+                        <div class="journal-badge">Current focus</div>
+                        <h3 class="mt-5 text-2xl font-semibold text-white">Security strategy with practical execution</h3>
+                        <p class="mt-4 text-white/70 leading-relaxed">
+                            My work is grounded in building resilient systems, improving visibility, and helping teams make confident decisions under pressure.
+                        </p>
+
+                        <div class="mt-8 space-y-3">
+                            <div class="flex items-center gap-3 rounded-2xl border border-white/10 bg-[#05101f]/70 px-4 py-3 text-sm text-white/80">
+                                <i class="fa-solid fa-shield-halved text-[#00f5d4]"></i>
+                                Defensive security and incident awareness
+                            </div>
+                            <div class="flex items-center gap-3 rounded-2xl border border-white/10 bg-[#05101f]/70 px-4 py-3 text-sm text-white/80">
+                                <i class="fa-solid fa-robot text-[#00f5d4]"></i>
+                                Research-driven problem solving
+                            </div>
+                            <div class="flex items-center gap-3 rounded-2xl border border-white/10 bg-[#05101f]/70 px-4 py-3 text-sm text-white/80">
+                                <i class="fa-solid fa-graduation-cap text-[#00f5d4]"></i>
+                                Continuous professional development
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="relative animate-on-scroll">
-                    <div class="grid md:grid-cols-12 gap-6">
-                        <div class="md:col-span-3">
-                            <div class="text-[#00f5d4] font-mono text-sm">2020...</div>
-                            <h3 class="text-2xl font-semibold">Directions and Capability Building</h3>
-                            <p class="text-white/60">DIrection</p>
+
+                    <div class="space-y-5">
+                        <div class="journal-card rounded-[1.4rem] p-6">
+                            <div class="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+                                <div>
+                                    <h3 class="mt-4 text-xl font-semibold">Foundation and practical exploration</h3>
+                                    <p class="mt-2 text-white/65">Built the groundwork through self-led learning, labs, and hands-on practice.</p>
+                                </div>
+                                <span class="text-sm text-[#8fe8de]">Self-led learning</span>
+                            </div>
+                            <div class="mt-5 grid sm:grid-cols-2 gap-3">
+                                <div class="rounded-2xl border border-white/10 bg-[#05101f]/70 px-4 py-3 text-sm text-white/75">CTFs and lab environments</div>
+                                <div class="rounded-2xl border border-white/10 bg-[#05101f]/70 px-4 py-3 text-sm text-white/75">Project-based experimentation</div>
+                            </div>
                         </div>
-                        <div class="md:col-span-9">
-                            <ul class="space-y-4 text-white/80">
-                                <li class="flex gap-x-3"><i class="fa-solid fa-circle-check text-[#00f5d4] mt-1"></i> Offensive Security</li>
-                                <li class="flex gap-x-3"><i class="fa-solid fa-circle-check text-[#00f5d4] mt-1"></i> Philosophy</li>
-                                <li class="flex gap-x-3"><i class="fa-solid fa-circle-check text-[#00f5d4] mt-1"></i> Entrepreneurship </li>
-                            </ul>
+
+                        <div class="journal-card rounded-[1.4rem] p-6">
+                            <div class="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+                                <div>
+                                   
+                                    <h3 id="certifications" class="mt-4 text-xl font-semibold">Academic excellence and certifications</h3>
+                                    <p class="mt-2 text-white/65">Studied at SIIM University while expanding skill sets through recognized security programs.</p>
+                                </div>
+                                <span class="text-sm text-[#8fe8de]">Academic growth</span>
+                            </div>
+                            <div class="mt-5 grid sm:grid-cols-2 gap-3">
+                                <div class="rounded-2xl border border-white/10 bg-[#05101f]/70 px-4 py-3 text-sm text-white/75">Degree in Information Security / Cybersecurity</div>
+                                <div class="rounded-2xl border border-white/10 bg-[#05101f]/70 px-4 py-3 text-sm text-white/75">Google Certified Professional Cybersecurity Engineer</div>
+                                <div class="rounded-2xl border border-white/10 bg-[#05101f]/70 px-4 py-3 text-sm text-white/75">Alison CISSP pathway</div>
+                                <div class="rounded-2xl border border-white/10 bg-[#05101f]/70 px-4 py-3 text-sm text-white/75">ALX Cybersecurity and Professional Foundations</div>
+                                <div class="rounded-2xl border border-white/10 bg-[#05101f]/70 px-4 py-3 text-sm text-white/75">Udemy Ethical Hacking training</div>
+                                <div class="rounded-2xl border border-white/10 bg-[#05101f]/70 px-4 py-3 text-sm text-white/75">Networking and communication programs</div>
+                            </div>
+                        </div>
+
+                        <div class="journal-card rounded-[1.4rem] p-6">
+                            <div class="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+                                <div>
+                                    <h3 class="mt-4 text-xl font-semibold">Capability building and direction</h3>
+                                    <p class="mt-2 text-white/65">Expanded into deeper practice across security engineering, leadership, philosophy, and entrepreneurship.</p>
+                                </div>
+                                <span class="text-sm text-[#8fe8de]">Leadership mindset</span>
+                            </div>
+                            <div class="mt-5 grid sm:grid-cols-3 gap-3">
+                                <div class="rounded-2xl border border-white/10 bg-[#05101f]/70 px-4 py-3 text-sm text-white/75">Security Engineering</div>
+                                <div class="rounded-2xl border border-white/10 bg-[#05101f]/70 px-4 py-3 text-sm text-white/75">Leadership</div>
+                                <div class="rounded-2xl border border-white/10 bg-[#05101f]/70 px-4 py-3 text-sm text-white/75">Philosophy</div>
+                                <div class="rounded-2xl border border-white/10 bg-[#05101f]/70 px-4 py-3 text-sm text-white/75">Entrepreneurship</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -549,7 +659,7 @@
                     <div class="p-8">
                         <div class="flex justify-between items-start">
                             <h3 class="text-2xl font-semibold">Wazuh SIEM Deployment</h3>
-                            <span class="px-3 py-1 text-xs font-mono bg-[#00f5d4]/10 text-[#00f5d4] rounded-2xl">2024</span>
+                    
                         </div>
                         <p class="text-white/70 mt-3">Centralized Security Monitoring System (SIEM Implementation using Wazuh).</p>
                         <div class="flex flex-wrap gap-2 mt-8">
@@ -568,7 +678,7 @@
                     <div class="p-8">
                         <div class="flex justify-between items-start">
                             <h3 class="text-2xl font-semibold">Keylogging for Credential Harvesting</h3>
-                            <span class="px-3 py-1 text-xs font-mono bg-[#00f5d4]/10 text-[#00f5d4] rounded-2xl">2024</span>
+                    
                         </div>
                         <p class="text-white/70 mt-3"> A Comparative Study on Detection, Evasion Indicators, and Persistence Against Endpoint Detection and Response (EDR) Systems.</p>
                         <div class="flex flex-wrap gap-2 mt-8">
@@ -589,7 +699,7 @@
                     <div class="p-8">
                         <div class="flex justify-between items-start">
                             <h3 class="text-2xl font-semibold">CONFIGURATION AND ADMINISTRATION OF A WPA2-ENTERPRISE </h3>
-                            <span class="px-3 py-1 text-xs font-mono bg-[#00f5d4]/10 text-[#00f5d4] rounded-2xl">2024</span>
+                    
                         </div>
                         <p class="text-white/70 mt-3"> Secure WPA2-Enterprise wireless network implementation using FreeRADIUS for centralized user authentication and enhanced network security within a local environment..</p>
                         <div class="flex flex-wrap gap-2 mt-8">
@@ -602,6 +712,69 @@
                         <a href="https://drive.google.com/file/d/1lS5srDZ1DMxc3Sv4qovOeIncVeRNziA4/view?usp=sharing" class="mt-8 inline-flex items-center text-[#00f5d4] text-sm font-medium">View full case study →</a>
                     </div>
                 </div>
+
+                <!-- Other project cards also have animate-on-scroll -->
+                <div class="card-glow bg-[#05101f] rounded-3xl overflow-hidden border border-[#00f5d4]/10 animate-on-scroll">
+                    <div class="h-2 bg-gradient-to-r from-[#00f5d4] to-transparent"></div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-2xl font-semibold">Applying filter to SQL queries</h3>
+                        </div>
+                        <p class="text-white/70 mt-3"> A Comparative Study on SQL Query Filtering Techniques, Data Retrieval, and Query Efficiency.</p>
+                        <div class="flex flex-wrap gap-2 mt-8">
+                            <span class="text-xs px-4 py-2 bg-[#0a2540] rounded-3xl">SQL</span>
+                            <span class="text-xs px-4 py-2 bg-[#0a2540] rounded-3xl">PostgreSQL</span>
+                            <span class="text-xs px-4 py-2 bg-[#0a2540] rounded-3xl">MySQL</span>
+                            <span class="text-xs px-4 py-2 bg-[#0a2540] rounded-3xl">Linux</span>
+                        </div>
+            
+                        <a href="https://drive.google.com/file/d/1enZ_AJ2mzSQ0IByF-Viz90CjGinYZhhh/view?usp=sharing" class="mt-8 inline-flex items-center text-[#00f5d4] text-sm font-medium">View full case study →</a>
+                    </div>
+                </div>
+
+                <!-- Other project cards also have animate-on-scroll -->
+                <div class="card-glow bg-[#05101f] rounded-3xl overflow-hidden border border-[#00f5d4]/10 animate-on-scroll">
+                    <div class="h-2 bg-gradient-to-r from-[#00f5d4] to-transparent"></div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-2xl font-semibold">Applying the NIST CSF to Incident Response</h3>
+                            
+                        </div>
+                        <p class="text-white/70 mt-3"> A Report on Applying the NIST Cybersecurity Framework (NIST CSF) to Incident Response.</p>
+                        <div class="flex flex-wrap gap-2 mt-8">
+                            <span class="text-xs px-4 py-2 bg-[#0a2540] rounded-3xl">NIST CSF</span>
+                            <span class="text-xs px-4 py-2 bg-[#0a2540] rounded-3xl">Incident Response</span>
+                            <span class="text-xs px-4 py-2 bg-[#0a2540] rounded-3xl">Cybersecurity</span>
+                            <span class="text-xs px-4 py-2 bg-[#0a2540] rounded-3xl">Framework</span>
+                        </div>
+            
+                        <a href="https://drive.google.com/file/d/1enZ_AJ2mzSQ0IByF-Viz90CjGinYZhhh/view?usp=sharing" class="mt-8 inline-flex items-center text-[#00f5d4] text-sm font-medium">View full case study →</a>
+                    </div>
+                </div>
+
+                <!-- Other project cards also have animate-on-scroll -->
+                <div class="card-glow bg-[#05101f] rounded-3xl overflow-hidden border border-[#00f5d4]/10 animate-on-scroll">
+                    <div class="h-2 bg-gradient-to-r from-[#00f5d4] to-transparent"></div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-2xl font-semibold">Linux file permissions</h3>
+                            
+                        </div>
+                        <p class="text-white/70 mt-3"> Applying Linux File Permissions to Reduce the System Attack Surface</p>
+                        <div class="flex flex-wrap gap-2 mt-8">
+                            <span class="text-xs px-4 py-2 bg-[#0a2540] rounded-3xl">Linux</span>
+                            <span class="text-xs px-4 py-2 bg-[#0a2540] rounded-3xl">File Permissions</span>
+                            <span class="text-xs px-4 py-2 bg-[#0a2540] rounded-3xl">System Security</span>
+                            <span class="text-xs px-4 py-2 bg-[#0a2540] rounded-3xl">Cybersecurity</span>
+                            <span class="text-xs px-4 py-2 bg-[#0a2540] rounded-3xl">Framework</span>
+                        </div>
+            
+                        <a href="https://drive.google.com/file/d/1enZ_AJ2mzSQ0IByF-Viz90CjGinYZhhh/view?usp=sharing" class="mt-8 inline-flex items-center text-[#00f5d4] text-sm font-medium">View full case study →</a>
+                    </div>
+                </div>
+
+
+
                 
             </div>
         </div>
@@ -660,7 +833,7 @@
          */
         function startTypingAnimation() {
             const textElement = document.getElementById('typing-text')
-            const fullText = "CYBER SECURITY ENGINEER | PHILOSOPHER | ENTREPRENEUR"
+            const fullText = "CYBER SECURITY ENGINEER | CYBER SECURITY ANALYST | PHILOSOPHER | ENTREPRENEUR"
             let index = 0
             
             function type() {
@@ -683,8 +856,8 @@
          */
         function animateCounters() {
             const counters = [
-                { id: 'stat-vuln', target: 50, suffix: '+' },
-                { id: 'stat-incidents', target: 12, suffix: '' },
+                { id: 'stat-vuln', target: 15, suffix: '+' },
+                { id: 'stat-incidents', target: 4, suffix: '' },
                 { id: 'stat-satisfaction', target: 98, suffix: '%' }
             ]
             
@@ -906,60 +1079,33 @@
         // Launch everything
         window.onload = init
     </script>
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
     <!-- SOCIAL + FOOTER -->
 
 <footer class="bg-[#05101f] border-t border-white/10 py-16 text-center relative overflow-hidden">
-
-```
-<!-- subtle background glow -->
 <div id="contact-section" class="absolute inset-0 bg-gradient-to-t from-[#00f5d4]/5 to-transparent pointer-events-none"></div>
 
-<h2 class="text-2xl text-[#00f5d4] font-semibold mb-10 glow">Connect With Me</h2>
+<div class="max-w-5xl mx-auto px-6 relative z-10">
+    <div class="rounded-[2rem] border border-white/10 bg-[#0a2540]/70 px-8 py-10 shadow-[0_20px_60px_rgba(0,245,212,0.12)]">
+        <div class="eyebrow mb-4">Contact</div>
+        <h2 class="text-3xl sm:text-4xl font-semibold heading-font text-white mb-4">Let’s build a stronger security posture together.</h2>
+        <p class="text-white/70 max-w-2xl mx-auto leading-relaxed">
+            Whether you need guidance on secure systems, incident response, or strategy, I’m available to collaborate with focused, purpose-driven teams.
+        </p>
 
-<div class="flex justify-center flex-wrap gap-8 text-2xl relative z-10">
+        <div class="flex justify-center flex-wrap gap-6 text-2xl mt-8">
+            <a href="https://github.com/ChristianAglanu" target="_blank" class="social-icon group"><i class="fa-brands fa-github"></i></a>
+            <a href="https://tryhackme.com/p/VanTitch" target="_blank" class="social-icon group"><iconify-icon icon="simple-icons:tryhackme"></iconify-icon></a>
+            <a href="https://wa.me/message/FDMD55V53LZTG1" target="_blank" class="social-icon group"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://www.youtube.com/@TitchTECHAcademy" target="_blank" class="social-icon group"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.linkedin.com/in/christian-aglanu-7b10793a0/" target="_blank" class="social-icon group"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+    </div>
 
-    <!-- X -->
-    <a href="https://x.com/YOUR_USERNAME" target="_blank"
-       class="social-icon group">
-        <i class="fa-brands fa-x-twitter"></i>
-    </a>
-
-    <!-- GitHub -->
-    <a href="https://github.com/YOUR_USERNAME" target="_blank"
-       class="social-icon group">
-        <i class="fa-brands fa-github"></i>
-    </a>
-
-    <!-- Facebook -->
-    <a href="https://facebook.com/YOUR_USERNAME" target="_blank"
-       class="social-icon group">
-        <i class="fa-brands fa-facebook"></i>
-    </a>
-
-    <!-- WhatsApp -->
-    <a href="https://whatsapp.com/channel/YOUR_CHANNEL_LINK" target="_blank"
-       class="social-icon group">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
-
-    <!-- YouTube -->
-    <a href="https://youtube.com/@YOUR_CHANNEL" target="_blank"
-       class="social-icon group">
-        <i class="fa-brands fa-youtube"></i>
-    </a>
-    
-    <!-- LinkedIn -->
-    <a href="https://linkedin.com/in/YOUR_PROFILE" target="_blank"
-       class="social-icon group">
-        <i class="fa-brands fa-linkedin-in"></i>
-    </a>
+    <p class="mt-10 text-white/50 text-sm">
+        © 2026 Christian Aglanu • christian.aglanu.ca@gmail.com • Built with focus and discipline
+    </p>
 </div>
-
-<p class="mt-10 text-white/50 text-sm relative z-10">
-    © 2026 Christian Aglanu • christian.aglanu.ca@gmail.com • Built with focus and discipline
-</p>
-```
-
 </footer>
 
 <style>
@@ -977,48 +1123,49 @@
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background: #0a2540;
+    background: rgba(10, 37, 64, 0.9);
     color: white;
-    border: 1px solid rgba(255,255,255,0.1);
-    transition: all 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.12);
+    transition: all 0.25s ease;
     overflow: hidden;
 }
 
-/* Glow ring effect */
 .social-icon::before {
     content: "";
     position: absolute;
-    inset: -2px;
-    border-radius: 50%;
-    background: linear-gradient(45deg, #00f5d4, transparent, #00f5d4);
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(0,245,212,0.18), transparent);
+    transform: translateX(-120%);
+    transition: transform 0.4s ease;
 }
 
-/* Hover effects */
-.social-icon:hover {
-    transform: translateY(-8px) scale(1.15);
+.social-icon:hover,
+.social-icon:focus-visible {
+    transform: translateY(-4px);
     color: #00f5d4;
-    box-shadow: 0 0 25px #00f5d4, 0 0 50px rgba(0,245,212,0.4);
+    border-color: rgba(0,245,212,0.35);
+    box-shadow: 0 10px 30px rgba(0,245,212,0.16);
 }
 
-.social-icon:hover::before {
-    opacity: 1;
+.social-icon:hover::before,
+.social-icon:focus-visible::before {
+    transform: translateX(120%);
 }
 
-/* Icon animation */
 .social-icon i {
-    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.25s ease, color 0.25s ease;
 }
 
-.social-icon:hover i {
-    transform: rotate(10deg) scale(1.2);
+.social-icon:hover i,
+.social-icon:focus-visible i {
+    transform: translateY(-1px) scale(1.05);
 }
 
-/* Floating animation */
 @keyframes float {
     0% { transform: translateY(0px); }
-    50% { transform: translateY(-6px); }
+    50% { transform: translateY(-4px); }
     100% { transform: translateY(0px); }
 }
 
@@ -1026,12 +1173,12 @@
     animation: float 4s ease-in-out infinite;
 }
 
-/* Stagger animation delays */
 .social-icon:nth-child(1) { animation-delay: 0s; }
-.social-icon:nth-child(2) { animation-delay: 0.5s; }
-.social-icon:nth-child(3) { animation-delay: 1s; }
-.social-icon:nth-child(4) { animation-delay: 1.5s; }
-.social-icon:nth-child(5) { animation-delay: 2s; }
+.social-icon:nth-child(2) { animation-delay: 0.4s; }
+.social-icon:nth-child(3) { animation-delay: 0.8s; }
+.social-icon:nth-child(4) { animation-delay: 1.2s; }
+.social-icon:nth-child(5) { animation-delay: 1.6s; }
+.social-icon:nth-child(6) { animation-delay: 2s; }
 
 </style>
 
